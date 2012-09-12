@@ -1,13 +1,12 @@
-<h1>Kategorie produktów</h1>
+<h1>Kategorie produktÃ³w</h1>
 <ul>
 <?php
+  $catsql = "SELECT * FROM kategorie;";
+  $catres = mysql_query($catsql);
 
-	$catsql = "SELECT * FROM kategorie;";
-	$catres = mysql_query($catsql);
-	
-	while($catrow = mysql_fetch_assoc($catres))
-	{
-		echo "<li><a href='" . $config_basedir . "/produkty.php?id=" . $catrow['id'] . "'>" . $catrow['nazwa'] . "</a></li>";
-	}
+  while($catrow = mysql_fetch_assoc($catres))
+  {
+    echo "<li><a href='" . $config_basedir . "produkty.php?id=" . $catrow['id'] . "'>" . $catrow['nazwa'] . "</a></li>";
+  }
 ?>
 </ul>

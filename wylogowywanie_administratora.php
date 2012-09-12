@@ -1,10 +1,9 @@
 <?php
+  session_satrt();
 
-	session_start();
+  require("konfiguracja.php");
 
-	require("konfiguracja.php");
+  session_unregister("SESS_ADMINLOGGEDIN");
 
-	session_unregister("SESS_ADMINLOGGEDIN");
-	
-	header("Location: " . $config_basedir);
+  header("Location: " . $config_basedir);
 ?>
